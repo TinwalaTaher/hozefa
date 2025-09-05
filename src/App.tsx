@@ -1,7 +1,33 @@
 import './App.css'
 import ImageGallery from './components/ImageGallery.tsx'
+import { useEffect, useRef } from 'react'
 
 function App() {
+  const audioRef = useRef<HTMLAudioElement>(null)
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (audio) {
+      // Try to play muted first to bypass autoplay restrictions
+      audio.muted = true
+      audio.play().then(() => {
+        // If successful, unmute after a short delay
+        setTimeout(() => {
+          audio.muted = false
+        }, 100)
+      }).catch(() => {
+        // If autoplay fails, wait for user interaction
+        const handleUserInteraction = () => {
+          audio.play()
+          document.removeEventListener('click', handleUserInteraction)
+          document.removeEventListener('keydown', handleUserInteraction)
+        }
+        document.addEventListener('click', handleUserInteraction)
+        document.addEventListener('keydown', handleUserInteraction)
+      })
+    }
+  }, [])
+
   return (
     <div className="biodata-container">
       <header className="header">
@@ -39,6 +65,16 @@ function App() {
         </div>
       </section>
 
+      <section className="section hobbies">
+        <h2>Hobbies</h2>
+        <div className="hobbies-list">
+          <div className="hobby-item"><strong>Traveling:</strong> Exploring new cultures and places — recently visited Rajasthan and Gujarat.</div>
+          <div className="hobby-item"><strong>Motorcycling & Cars:</strong> Enjoy learning about bike maintenance and road trips on two wheels.</div>
+          <div className="hobby-item"><strong>Animal Enthusiast:</strong> Love watching documentaries and reading about wildlife and conservation.</div>
+          <div className="hobby-item"><strong>Geography Buff:</strong> Passionate about learning country capitals, flags, and traditions.</div>
+        </div>
+      </section>
+
       <section className="section family-info">
         <h2>Family Information</h2>
         <div className="info-grid">
@@ -71,6 +107,10 @@ function App() {
         <h2>Gallery</h2>
         <ImageGallery />
       </section>
+      <audio ref={audioRef} loop>
+        <source src="/calm-music.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </div>
   )
 }
