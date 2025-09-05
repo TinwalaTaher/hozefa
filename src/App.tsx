@@ -15,9 +15,9 @@ function App() {
           <div className="info-item">
             <strong>Father's Full Name:</strong> Azizbhai Daruwala
           </div>
-          <div className="info-item">
+          {/* <div className="info-item">
             <strong>Mother's Full Name:</strong> Fatema Azizbhai Daruwala
-          </div>
+          </div> */}
           <div className="info-item">
             <strong>Date of Birth:</strong> 16/07/2002
           </div>
@@ -25,14 +25,14 @@ function App() {
             <strong>Height:</strong> 6 ft
           </div>
           <div className="info-item">
-            <strong>Education:</strong> B.com complete
+            <strong>Education:</strong> B.com Graduate
           </div>
           <div className="info-item">
             <strong>Occupation:</strong> Business
           </div>
-          <div className="info-item">
+          {/* <div className="info-item">
             <strong>Address:</strong> near ashirwad hospital, Deengadh bariya
-          </div>
+          </div> */}
           <div className="info-item">
             <strong>Watan:</strong> devgadh baria(Deengarh baria)
           </div>
