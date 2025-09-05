@@ -38,9 +38,9 @@ function App() {
       <section className="section personal-info">
         <h2>Personal Information</h2>
         <div className="info-grid">
-          <div className="info-item">
+          {/* <div className="info-item">
             <strong>Father's Full Name:</strong> Azizbhai Daruwala
-          </div>
+          </div> */}
           {/* <div className="info-item">
             <strong>Mother's Full Name:</strong> Fatema Azizbhai Daruwala
           </div> */}
@@ -64,7 +64,20 @@ function App() {
           </div>
         </div>
       </section>
-
+            <section className="section family-info">
+        <h2>Family Information</h2>
+        <div className="info-grid">
+          <div className="info-item">
+            <strong>Father:</strong> Aziz Husainibhai Daruwala
+          </div>
+          <div className="info-item">
+            <strong>Mother:</strong> Fatema Azizbhai Daruwala
+          </div>
+          <div className="info-item">
+            <strong>Siblings:</strong> One married brother
+          </div>
+        </div>
+      </section>
       <section className="section hobbies">
         <h2>Hobbies</h2>
         <div className="hobbies-list">
@@ -74,26 +87,6 @@ function App() {
           <div className="hobby-item"><strong>Geography Buff:</strong> Passionate about learning country capitals, and traditions.</div>
         </div>
       </section>
-
-      <section className="section family-info">
-        <h2>Family Information</h2>
-        <div className="info-grid">
-          <div className="info-item">
-            <strong>Father:</strong> Azizbhai Daruwala
-          </div>
-          <div className="info-item">
-            <strong>Mother:</strong> Fatema Azizbhai Daruwala
-          </div>
-          <div className="info-item">
-            <strong>Siblings:</strong> One married brother
-          </div>
-        </div>
-        <div className="family-gallery">
-          <h3>Family Photos</h3>
-          <ImageGallery folder="family-images" />
-        </div>
-      </section>
-
       <section className="section social-media">
         <h2>Social Media</h2>
         <div className="social-links">
@@ -106,6 +99,10 @@ function App() {
       <section className="section image-gallery">
         <h2>Gallery</h2>
         <ImageGallery />
+      </section>
+      <section className="section image-gallery">
+        <h2>Family Photos</h2>
+          <ImageGallery folder="family-images" />
       </section>
     </div>
   )
