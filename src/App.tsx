@@ -52,6 +52,10 @@ function App() {
             <strong>Siblings:</strong> One married brother
           </div>
         </div>
+        <div className="family-gallery">
+          <h3>Family Photos</h3>
+          <ImageGallery folder="family-images" />
+        </div>
       </section>
 
       <section className="section social-media">

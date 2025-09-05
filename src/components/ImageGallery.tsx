@@ -1,15 +1,26 @@
 import { useState, useEffect } from 'react'
 
-const ImageGallery = () => {
+interface ImageGalleryProps {
+  folder?: string
+}
+
+const ImageGallery = ({ folder = 'hozefa-images' }: ImageGalleryProps) => {
   const [images, setImages] = useState<string[]>([])
   const [modalOpen, setModalOpen] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
 
   useEffect(() => {
-    const imageModules = import.meta.glob('./../assets/hozefa-images/*', { eager: true })
+    let imageModules: Record<string, any> = {}
+
+    if (folder === 'hozefa-images') {
+      imageModules = import.meta.glob('./../assets/hozefa-images/*', { eager: true })
+    } else if (folder === 'family-images') {
+      imageModules = import.meta.glob('./../assets/family-images/*', { eager: true })
+    }
+
     const imageUrls = Object.values(imageModules).map((module: any) => module.default)
     setImages(imageUrls)
-  }, [])
+  }, [folder])
 
   const openModal = (index: number) => {
     setCurrentIndex(index)

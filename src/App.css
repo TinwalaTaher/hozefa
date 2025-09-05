@@ -263,6 +263,16 @@
   }
 }
 
+.family-gallery {
+  margin-top: 20px;
+}
+
+.family-gallery h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+  font-size: 1.2em;
+}
+
 /* TV and large screens */
 @media (min-width: 1200px) {
   .biodata-container {
