@@ -68,7 +68,7 @@ function App() {
       <section className="section hobbies">
         <h2>Hobbies</h2>
         <div className="hobbies-list">
-          <div className="hobby-item"><strong>Traveling:</strong> Exploring new cultures and places — recently visited Lonavala, Mahabaleshwar, Kerala and Udaipur.</div>
+          <div className="hobby-item"><strong>Traveling:</strong> Exploring new cultures and places — recently visited Lonavala, Mahabaleshwar, Kerala, Goa and Udaipur.</div>
           <div className="hobby-item"><strong>Motorcycling & Cars:</strong> Enjoy learning about bike maintenance and road trips on two wheels.</div>
           <div className="hobby-item"><strong>Animal Enthusiast:</strong> Love watching documentaries and reading about wildlife and conservation.</div>
           <div className="hobby-item"><strong>Geography Buff:</strong> Passionate about learning country capitals, and traditions.</div>
