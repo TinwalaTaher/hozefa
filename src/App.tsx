@@ -107,10 +107,6 @@ function App() {
         <h2>Gallery</h2>
         <ImageGallery />
       </section>
-      <audio ref={audioRef} loop>
-        <source src="/calm-music.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
     </div>
   )
 }
